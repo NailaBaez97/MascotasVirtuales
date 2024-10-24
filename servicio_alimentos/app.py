@@ -1,5 +1,4 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from models import db
 from routes import alimentos_bp
