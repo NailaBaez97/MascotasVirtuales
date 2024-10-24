@@ -19,7 +19,7 @@ def agregar_usuario():
     cursor = conn.cursor()
 
 
-    # Insertar la mascota en la tabla de mascotas
+    # Insertar el usuario en la tabla de usuarios
     cursor.execute('''
     INSERT INTO usuarios (nombre_usuario, ci)
     VALUES (?, ?)

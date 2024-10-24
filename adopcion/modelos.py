@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
 )
 ''')
 
-# Tabla de mascotas (sin cambios)
+# Tabla de mascotas 
 cursor.execute('''
 CREATE TABLE IF NOT EXISTS mascotas (
     mascota_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS mascotas (
 )
 ''')
 
-# Tabla de adopcion (corrigiendo la redundancia)
+# Tabla de adopcion 
 cursor.execute('''
 CREATE TABLE IF NOT EXISTS adopcion (
     adopcion_id INTEGER PRIMARY KEY AUTOINCREMENT,
