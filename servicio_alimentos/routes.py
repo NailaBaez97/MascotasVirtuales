@@ -25,7 +25,7 @@ def alimento_mascota():
 @alimentos_bp.route('/ultima_alimentacion/<int:mascota_id>', methods = ['GET'])
 def obtener_ultima_alimentacion(mascota_id):
     # Obtener la última vez que la mascota fue alimentada
-    ultima_alimentacion = Alimentacion.query.filter(mascota_id = mascota_id).order_by(Alimentacion.id.desc()).first()
+    ultima_alimentacion = Alimentacion.query.filter_by(mascota_id = mascota_id).order_by(Alimentacion.id.desc()).first()
     if ultima_alimentacion:
         return({
             'mascotaId' : ultima_alimentacion.mascota_id,
