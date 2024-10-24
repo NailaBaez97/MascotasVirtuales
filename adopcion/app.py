@@ -72,5 +72,9 @@ def adoptar():
 
     return jsonify({'mensaje': 'Mascota adoptada con éxito'}), 201
 
+
+
+
+
 if __name__ == '__main__':
     app.run(port=5000)
