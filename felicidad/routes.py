@@ -12,9 +12,9 @@ def calcular_felicidad(ultima_alimentacion):
     diferencia_horas = (ahora - ultima_alimentacion_dt).total_seconds() / 3600
     
     # Si han pasado menos de 5 horas, la mascota está feliz
-    if diferencia_horas < 5:
+    if diferencia_horas < 1:
         return "feliz"
-    elif 5 <= diferencia_horas < 5:
+    elif 5 <= diferencia_horas < 10:
         return "neutra"
     else:
         return "triste"
