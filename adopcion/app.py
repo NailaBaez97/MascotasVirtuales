@@ -12,19 +12,16 @@ def get_db_connection():
 # Endpoint para agregar un nuevo usuario
 @app.route('/usuarios', methods=['POST'])
 def agregar_usuario():
-    nombre_usuario = request.json['nombre_usuario']
-    ci = request.json['ci']
+    try:
+        nombre_usuario = request.json['nombre_usuario']
+        ci = request.json['ci']
+    except KeyError as e:
+        return jsonify({'error': f'Missing parameter: {str(e)}'}), 400
 
     conn = get_db_connection()
     cursor = conn.cursor()
 
-
-    # Insertar el usuario en la tabla de usuarios
-    cursor.execute('''
-    INSERT INTO usuarios (nombre_usuario, ci)
-    VALUES (?, ?)
-    ''', (nombre_usuario, ci))
-
+    cursor.execute('''INSERT INTO usuarios (nombre_usuario, ci) VALUES (?, ?)''', (nombre_usuario, ci))
     conn.commit()
     conn.close()
 
